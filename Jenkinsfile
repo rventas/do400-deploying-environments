@@ -7,13 +7,13 @@ label 'maven'
 stages {
 stage('Tests') {
 steps {
-sh './mvnw clean test'
+sh './shopping-cart/mvnw clean test'
 }
 }
 stage('Package') {
 steps {
 sh '''
-./mvnw package -DskipTests \
+./shopping-cart/mvnw package -DskipTests \
 -Dquarkus.package.type=uber-jar
 '''
 archiveArtifacts 'target/*.jar'
